@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context="com.recipetresure.RecipeForm"
+                android:orientation="vertical"
+                style="@style/AppTheme">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recipeName"
+                android:hint="Recipe Name"
+                android:layout_marginTop="50dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/recipeIngredients"
+                android:hint="Recipe Ingredients"
+                android:layout_below="@+id/recipeName"
+                android:layout_marginTop="25dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/recipeDetails"
+                android:hint="Describe Recipe"
+                android:layout_below="@+id/recipeIngredients"
+                android:layout_marginTop="25dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Recipe"
+                android:id="@+id/submitRecipe"
+                android:layout_below="@+id/recipeDetails"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="logOut"
+                android:id="@+id/logOut"
+                android:layout_below="@+id/submitRecipe"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+

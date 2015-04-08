@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RecipeTresure</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="recipe_array">
+        <item>Sweets</item>
+        <item>Baking</item>
+        <item>Vegetable</item>
+        <item>Juice</item>
+        <item>Spice</item>
+        <item>Snacks</item>
+        <item>Puri Naan Paratha</item>
+        <item>Chutney Picke etc..</item>
+    </string-array>
+
+    <string name="login_error_msg">Enter all the data: Username and Password</string>
+    <string name="error_msg">Enter all the data: Name, Username, Password</string>
+    <string name="title_activity_detail">RecipeTresure</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="signIn">SignIn</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
