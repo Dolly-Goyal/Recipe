@@ -46,9 +46,6 @@ public class HomeActivity extends ActionBarActivity {
         setContentView(R.layout.activity_home);
         mListView = (GridView) findViewById(R.id.listView);
 
-        NavigatationDrawerFragment drawerFragment =
-                (NavigatationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fregament_navigation_drawer);
-        drawerFragment.setUp((DrawerLayout)R.id.drawer_layout, toolBar);
 
         //declare list variable as object of list
         rn = new ArrayList<String>();
