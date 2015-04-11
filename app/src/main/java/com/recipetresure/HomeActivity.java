@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,6 +35,7 @@ public class HomeActivity extends ActionBarActivity {
     protected Button mSignInButton;
     protected List<ParseObject> mRecipeData;
     protected SwipeRefreshLayout mSwipeRefreshLayout;
+    private Toolbar mToolbar;
 
     GridView mListView;
     // for custom adapter we have to declare array in list
@@ -46,6 +48,11 @@ public class HomeActivity extends ActionBarActivity {
         setContentView(R.layout.activity_home);
         mListView = (GridView) findViewById(R.id.listView);
 
+        mToolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(mToolbar);
+        navigationfragment drawerFragment = (navigationfragment)
+                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_fragment);
+        drawerFragment.setUp(R.id.navigation_drawer_fragment,(DrawerLayout)findViewById(R.id.drawer_layout), mToolbar);
 
         //declare list variable as object of list
         rn = new ArrayList<String>();
@@ -115,7 +122,24 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        //on click event it redirect sub activity
+        if (id == R.id.navigate) {
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
 }
 

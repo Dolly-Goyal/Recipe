@@ -38,4 +38,11 @@
 
         </RelativeLayout>
     </RelativeLayout>
+    <fragment
+        android:layout_width="match_parent"
+        android:name="com.recipetresure.navigationfragment"
+        android:layout_height="match_parent"
+        android:id="@+id/navigation_drawer_fragment"
+        app:layout="@layout/fragment_navigation"
+        tools:layout="@layout/fragment_navigation"></fragment>
 </android.support.v4.widget.DrawerLayout>

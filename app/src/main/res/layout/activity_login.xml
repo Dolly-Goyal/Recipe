@@ -4,6 +4,10 @@
                 android:layout_height="match_parent"
                 tools:context="com.recipetresure.LoginActivity">
 
+    <include  android:id="@+id/app_bar"
+              layout="@layout/app_bar">
+    </include>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
