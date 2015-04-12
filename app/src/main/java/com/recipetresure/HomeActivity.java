@@ -48,6 +48,13 @@ public class HomeActivity extends ActionBarActivity {
         setContentView(R.layout.activity_home);
         mListView = (GridView) findViewById(R.id.listView);
         sortBy = (TextView) findViewById(R.id.sortByUser);
+        sortBy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, SortByUserActivity.class);
+                startActivity(intent);
+            }
+        });
         SignIn = (TextView) findViewById(R.id.signIn);
         SignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +90,7 @@ public class HomeActivity extends ActionBarActivity {
         recipeQuery.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> parseObjects, ParseException e) {
-                setSupportProgressBarIndeterminateVisibility(false);
+                setSupportProgressBarIndeterminate(true);
                 if (mSwipeRefreshLayout.isRefreshing()) {
                     mSwipeRefreshLayout.setRefreshing(false);
                 }

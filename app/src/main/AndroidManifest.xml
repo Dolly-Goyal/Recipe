@@ -46,6 +46,10 @@
             android:name=".SortByUserActivity"
             android:label="@string/title_activity_sort_by_user" >
         </activity>
+        <activity
+            android:name=".UserDataActivity"
+            android:label="@string/title_activity_user_data" >
+        </activity>
     </application>
 
 </manifest>
