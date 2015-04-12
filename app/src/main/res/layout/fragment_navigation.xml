@@ -11,6 +11,34 @@
     android:layout_width="280dp"
     android:layout_height="140dp"
     android:src="@drawable/ic_launcher"
-    android:layout_marginTop="@dimen/margin_top"/>
+    android:layout_marginTop="@dimen/margin_top"
+    android:id="@+id/imageView2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:id="@+id/signIn"
+        android:paddingLeft="35dp"
+        android:textColor="#00897C"
+        android:textSize="25dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+       />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sort By User"
+        android:id="@+id/sortByUser"
+        android:paddingLeft="35dp"
+        android:textColor="#00897C"
+        android:textSize="25dp"
+        android:layout_below="@+id/signIn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        />
 
 </RelativeLayout>

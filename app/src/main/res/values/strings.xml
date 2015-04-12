@@ -21,5 +21,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="signIn">SignIn</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="title_activity_sort_by_user">SortByUserActivity</string>
 
 </resources>

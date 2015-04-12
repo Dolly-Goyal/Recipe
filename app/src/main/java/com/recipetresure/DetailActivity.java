@@ -36,12 +36,10 @@ public class DetailActivity extends ActionBarActivity {
         mRecipetitle.setText(mRecipeTitle);
         mIngredients.setText(mRecipeIngredients);
         mDescription.setText(mRecipeDetails);
-        mRatingBar.getRating();
-        mRatingBar.setOnClickListener(new View.OnClickListener() {
+        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DetailActivity.this, HomeActivity.class);
-                startActivity(intent);
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+
             }
         });
     }

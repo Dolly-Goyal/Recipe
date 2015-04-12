@@ -11,12 +11,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class navigationfragment extends android.support.v4.app.Fragment {
+public class navigationFragment extends android.support.v4.app.Fragment {
     public static final String PREF_FILE_NAME = "testpref";
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
@@ -25,7 +28,7 @@ public class navigationfragment extends android.support.v4.app.Fragment {
 
     private boolean mUserLearnedDrawer;
     private boolean mFromSavedInstanceState;
-    public navigationfragment() {
+    public navigationFragment() {
         // Required empty public constructor
     }
 
@@ -43,7 +46,7 @@ public class navigationfragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigationfragment, container, false);
+        return inflater.inflate(R.layout.fragment_navigation, container, false);
     }
 
 
