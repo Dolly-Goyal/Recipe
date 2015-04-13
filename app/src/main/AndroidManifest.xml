@@ -33,6 +33,8 @@
         <activity
             android:name=".RecipeForm"
             android:label="@string/app_name" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeActivity">
+                </meta-data>
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -41,14 +43,20 @@
         <activity
             android:name=".DetailActivity"
             android:label="@string/title_activity_detail" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeActivity">
+                </meta-data>
         </activity>
         <activity
             android:name=".SortByUserActivity"
             android:label="@string/title_activity_sort_by_user" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeActivity">
+                </meta-data>
         </activity>
         <activity
             android:name=".UserDataActivity"
             android:label="@string/title_activity_user_data" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeActivity">
+                </meta-data>
         </activity>
     </application>
 

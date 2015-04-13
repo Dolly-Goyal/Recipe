@@ -1,67 +1,95 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:context="com.recipetresure.RecipeForm"
-                android:orientation="vertical"
-                style="@style/AppTheme">
+<RelativeLayout
+    style="@style/AppTheme"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFCCBC"
+    tools:context="com.recipetresure.RecipeForm">
 
-    <ScrollView
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar">
+    </include>
+
+    <RelativeLayout
+        android:id="@+id/relat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar">
+
+        <Button
+            android:id="@+id/logOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFA726"
+            android:text="log-Out"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            />
+
+        <Button
+            android:id="@+id/submitRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/logOut"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#FFA726"
+            android:text="Submit Recipe"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            />
+
+    <ScrollView
         android:id="@+id/scrollView"
-        android:layout_gravity="center" >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_above="@+id/submitRecipe"
+        android:layout_alignParentTop="true"
+        >
 
         <LinearLayout
+            android:id="@+id/linear2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/recipeName"
-                android:hint="Recipe Name"
-                android:layout_marginTop="50dp"/>
-
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/recipeIngredients"
-                android:hint="Recipe Ingredients"
-                android:layout_below="@+id/recipeName"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="50dp"
+                android:hint="Recipe Name"/>
 
             <EditText
+                android:id="@+id/recipeIngredients"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/recipeName"
+                android:layout_marginTop="25dp"
                 android:ems="10"
+                android:hint="Recipe Ingredients"
+                android:inputType="textMultiLine"/>
+
+            <EditText
                 android:id="@+id/recipeDetails"
-                android:hint="Describe Recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/recipeIngredients"
-                android:layout_marginTop="25dp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Submit Recipe"
-                android:id="@+id/submitRecipe"
-                android:layout_below="@+id/recipeDetails"
-                />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="logOut"
-                android:id="@+id/logOut"
-                android:layout_below="@+id/submitRecipe"
-                />
+                android:layout_marginTop="25dp"
+                android:ems="10"
+                android:hint="Describe Recipe"
+                android:inputType="textMultiLine"/>
 
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
 
 
+    </RelativeLayout>
+</RelativeLayout>

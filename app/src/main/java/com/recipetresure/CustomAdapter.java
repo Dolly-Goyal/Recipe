@@ -16,7 +16,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
     protected List<String> mPersonId;
     protected int[] mImage;
 
-    public CustomAdapter(Context context, List<String> recipeTitle,List<String> personId) {
+    public CustomAdapter(Context context, List<String> recipeTitle, List<String> personId) {
         super(context, R.layout.single_row, recipeTitle);
         mContext = context;
         mRecipeTitle = recipeTitle;

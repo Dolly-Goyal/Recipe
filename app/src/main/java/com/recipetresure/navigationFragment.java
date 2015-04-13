@@ -70,12 +70,7 @@ public class navigationFragment extends android.support.v4.app.Fragment {
                 getActivity().invalidateOptionsMenu();
             }
             //for change the toolbar as a dark when side navigation is open
-            @Override
-            public void onDrawerSlide(View drawerView, float slideOffset) {
-                if (slideOffset<0.6) {
-                    toolbar.setAlpha(1-slideOffset);
-                }
-            }
+
         };
         if (mUserLearnedDrawer && mFromSavedInstanceState) {
             mDrawerLayout.openDrawer(containerView);

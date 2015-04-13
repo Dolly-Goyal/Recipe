@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context="com.recipetresure.navigationFragment"
-                android:background="#C5E1A5"
+                android:background="#FFCCBC"
                 android:id="@+id/fragment_navigation_drawer">
 
 <!-- TODO: Update blank fragment layout -->
@@ -30,8 +30,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sort By User"
-        android:id="@+id/sortByUser"
+        android:text="Sign Up"
+        android:id="@+id/signup"
         android:paddingLeft="35dp"
         android:textColor="#00897C"
         android:textSize="25dp"
@@ -40,5 +40,17 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="18dp"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sort By User"
+        android:id="@+id/sortByUser"
+        android:paddingLeft="35dp"
+        android:textColor="#00897C"
+        android:textSize="25dp"
+        android:layout_below="@+id/signup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"/>
 
 </RelativeLayout>

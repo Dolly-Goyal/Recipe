@@ -3,6 +3,7 @@ package com.recipetresure;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -21,6 +23,7 @@ import com.parse.SignUpCallback;
 public class PersonDetailActivity extends Activity {
     EditText mPersonName,mUserName,mPassword;
     Button mSubmit,mCancel;
+    TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,8 @@ public class PersonDetailActivity extends Activity {
         mPassword = (EditText) findViewById(R.id.password);
         mSubmit = (Button) findViewById(R.id.submit);
         mCancel = (Button) findViewById(R.id.cancel);
+        mTextView = (TextView) findViewById(R.id.nameRecipe);
+        mTextView.setShadowLayer(5,3,1, Color.RED);
 
         //Create DropDown Menu For Recipe Type
         Spinner spinner = (Spinner) findViewById(R.id.spinner);

@@ -2,7 +2,8 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="com.recipetresure.SortByUserActivity">
+                tools:context="com.recipetresure.SortByUserActivity"
+                android:background="#FFCCBC">
 
     <include
         android:id="@+id/app_bar"
@@ -16,11 +17,11 @@
         android:id="@+id/nameUserList"
         android:textSize="35dp"
         android:gravity="center"
-        android:textColor="#4FC3F7"
+        android:textColor="#D50000"
         android:layout_below="@+id/app_bar"/>
 
     <ListView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/userNameData"
         android:paddingLeft="45dp"

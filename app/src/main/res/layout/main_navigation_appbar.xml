@@ -28,12 +28,12 @@
 
         <fragment
             android:id="@+id/navigation_drawer_fragment"
-            android:name="com.recipetresure.navigationfragment"
             android:layout_width="@dimen/nav_drawer_width"
+            android:name="com.recipetresure.navigationFragment"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:layout="@layout/fragment_navigation"
-            tools:layout="@layout/fragment_navigation"></fragment>
+            tools:layout="@layout/fragment_navigation"/>
 
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>

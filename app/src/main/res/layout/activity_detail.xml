@@ -2,23 +2,19 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="com.recipetresure.DetailActivity">
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="#ff0de9ff">
+                tools:context="com.recipetresure.DetailActivity"
+                android:background="#FFCCBC">
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar">
+    </include>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/app_bar"
             android:text="Person Name: "
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
             android:textAlignment="center"
             android:paddingLeft="20dp"
             android:textColor="#ff000000"
@@ -27,34 +23,33 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/app_bar"
             android:text="Person Name"
             android:id="@+id/pId"
             android:paddingLeft="160dp"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
             android:textAlignment="center"
             android:textSize="20sp"/>
-
-    </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/pId"
         android:text="Recipe Title: "
+        android:paddingTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
         android:paddingLeft="20dp"
         android:textColor="#ff000000"
         android:textSize="20sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/pId"
         android:text="Recipe Title"
         android:id="@+id/rtitle"
         android:paddingLeft="160dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
         android:textSize="20sp"/>
 
     <ScrollView
@@ -87,7 +82,7 @@
                 android:text="Ingredient"
                 android:id="@+id/Ingredients"
                 android:paddingLeft="160dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="10dp"
                 android:layout_below="@+id/recipeTitle"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -117,7 +112,6 @@
                 android:layout_alignParentStart="true"
                 android:textSize="20sp"
                 android:scrollbars="vertical"/>
-
 
         </RelativeLayout>
     </ScrollView>

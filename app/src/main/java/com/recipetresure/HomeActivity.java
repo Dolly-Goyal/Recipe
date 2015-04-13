@@ -40,13 +40,22 @@ public class HomeActivity extends ActionBarActivity {
     // for custom adapter We have to declare array in list
     List<String> rn;
     List<String> un;
-    TextView SignIn,sortBy;
+    TextView SignIn,sortBy,SignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mListView = (GridView) findViewById(R.id.listView);
+        SignUp = (TextView) findViewById(R.id.signup);
+        SignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, PersonDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
         sortBy = (TextView) findViewById(R.id.sortByUser);
         sortBy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +64,7 @@ public class HomeActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+
         SignIn = (TextView) findViewById(R.id.signIn);
         SignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,6 +138,12 @@ public class HomeActivity extends ActionBarActivity {
 
     }
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_home, menu);
+        return true;
+    }
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -140,7 +156,7 @@ public class HomeActivity extends ActionBarActivity {
         }
         //on click event it redirect sub activity
         if (id == R.id.navigation_drawer_fragment) {
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, SortByUserActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
