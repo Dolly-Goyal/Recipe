@@ -5,18 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.recipetresure.HomeActivity"
-    >
+    android:background="#FFCCBC">
 
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar">
     </include>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/recipeName"
+        android:text="Cooked By"
+        android:textStyle="bold"
+        android:textColor="#ffff0300"
+        android:layout_below="@+id/app_bar"
+        android:id="@+id/name"
+        android:paddingLeft="20dp"/>
+
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/recipeName"
+        android:layout_below="@+id/app_bar"
+        android:layout_alignParentRight="true"
+        android:text="recipe name"/>
+
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
-        android:layout_below="@+id/app_bar"
+        android:layout_below="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFCCBC"
         android:fitsSystemWindows="true">
 
     <android.support.v4.widget.SwipeRefreshLayout
@@ -38,7 +58,6 @@
         android:layout_gravity="start"
         app:layout="@layout/fragment_navigation"
         tools:layout="@layout/fragment_navigation"></fragment>
-
 
     </android.support.v4.widget.DrawerLayout>
 </RelativeLayout>

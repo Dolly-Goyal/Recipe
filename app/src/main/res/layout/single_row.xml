@@ -11,30 +11,21 @@
 
     <TextView
         android:id="@+id/personId"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/recipeTitle"
         android:textStyle="bold"
         android:textColor="#ff000000"
         android:paddingLeft="20dp"/>
 
     <TextView
         android:id="@+id/recipeTitle"
-        android:layout_width="match_parent"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/personId"
+        android:layout_alignParentRight="true"
         android:textColor="#ff848484"
-        android:paddingLeft="20dp"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="241dp"
-            android:layout_marginStart="241dp"
-            android:src="@drawable/ic_action_camera"/>
+        android:paddingRight="20dp"/>
 
     </RelativeLayout>
 </LinearLayout>

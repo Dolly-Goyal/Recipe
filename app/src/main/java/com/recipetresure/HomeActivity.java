@@ -33,20 +33,22 @@ import java.util.List;
 
 
 public class HomeActivity extends ActionBarActivity {
+
     protected List<ParseObject> mRecipeData;
-    protected SwipeRefreshLayout mSwipeRefreshLayout;
+    protected SwipeRefreshLayout mSwipeRefreshLayout; //generate a progress bar
     private Toolbar mToolbar;
     GridView mListView;
-    // for custom adapter We have to declare array in list
-    List<String> rn;
-    List<String> un;
+    List<String> rn; //declare array list variable for custom adapter
+    List<String> un; ////declare array list variable for custom adapter
     TextView SignIn,sortBy,SignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         mListView = (GridView) findViewById(R.id.listView);
+
         SignUp = (TextView) findViewById(R.id.signup);
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +80,8 @@ public class HomeActivity extends ActionBarActivity {
         setSupportActionBar(mToolbar);
         navigationFragment drawerFragment = (navigationFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_fragment);
-        drawerFragment.setUp(R.id.navigation_drawer_fragment,(DrawerLayout)findViewById(R.id.drawer_layout), mToolbar);
+        drawerFragment.setUp(R.id.navigation_drawer_fragment,
+                (DrawerLayout)findViewById(R.id.drawer_layout), mToolbar);
 
         //declare list variable as object of list
         rn = new ArrayList<String>();

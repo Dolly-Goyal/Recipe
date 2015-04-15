@@ -1,10 +1,11 @@
 <RelativeLayout
+    style="@style/AppTheme"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.recipetresure.RecipeForm"
-    android:id="@+id/related">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCCBC"
+    tools:context="com.recipetresure.RecipeForm">
 
     <include
         android:id="@+id/app_bar"
@@ -48,16 +49,18 @@
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_above="@+id/submitRecipe"
             android:layout_alignParentTop="true"
             >
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/linear2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:splitMotionEvents="true">
 
             <EditText
                 android:id="@+id/recipeName"
@@ -86,7 +89,7 @@
                 android:hint="Describe Recipe"
                 android:inputType="textMultiLine"/>
 
-        </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 
 
