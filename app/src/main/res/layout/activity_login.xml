@@ -9,20 +9,13 @@
               <!--layout="@layout/app_bar">-->
     <!--</include>-->
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:weightSum="1"
-        android:layout_marginTop="20dp">
-
-        <TextView
+          <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="RECIPE TRESURE"
-            android:gravity="center"
             android:id="@+id/nameRecipe"
+            android:gravity="center"
             android:textColor="#FFA726"
             android:textSize="40sp"
             android:fontFamily="@android:string/defaultMsisdnAlphaTag"
@@ -37,10 +30,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:layout_below="@+id/nameRecipe"
             android:ems="10"
             android:id="@+id/loginUserName"
             android:layout_marginTop="50dp"
-            android:hint="User Name"
+            android:hint="Email"
             android:paddingLeft="20dp">
         <requestFocus/>
         </EditText>
@@ -49,9 +43,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:layout_below="@+id/loginUserName"
             android:ems="10"
             android:hint="Password"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:id="@+id/logInPassword"
             android:paddingLeft="20dp"/>
 
@@ -59,10 +54,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFA726"
+            android:layout_below="@+id/logInPassword"
             android:text="Log-In"
             android:textSize="30dp"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:id="@+id/logIn"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -71,6 +67,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/logIn"
             android:text="Sign-Up"
             android:textSize="30dp"
             android:textColor="#FFFFFF"
@@ -80,7 +77,5 @@
             android:layout_marginRight="30dp"
             android:id="@+id/signUp"
             />
-
-    </LinearLayout>
 
 </RelativeLayout>

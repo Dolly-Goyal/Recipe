@@ -40,7 +40,7 @@ public class HomeActivity extends ActionBarActivity {
     GridView mListView;
     List<String> rn; //declare array list variable for custom adapter
     List<String> un; ////declare array list variable for custom adapter
-    TextView SignIn,sortBy,SignUp;
+    TextView SignIn,sortBy,SignUp,RecipeType,RecipePlace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,24 @@ public class HomeActivity extends ActionBarActivity {
         setContentView(R.layout.activity_home);
 
         mListView = (GridView) findViewById(R.id.listView);
+
+        RecipeType = (TextView) findViewById(R.id.recipeType);
+        RecipeType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, SortByType.class);
+                startActivity(intent);
+            }
+        });
+
+        RecipePlace = (TextView) findViewById(R.id.recipeFamous);
+        RecipePlace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, SortByPlace.class);
+                startActivity(intent);
+            }
+        });
 
         SignUp = (TextView) findViewById(R.id.signup);
         SignUp.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +148,8 @@ public class HomeActivity extends ActionBarActivity {
                             intent.putExtra("title",mRecipeData.get(position).getString(Constant.KEY_RECIPE_TITLE));
                             intent.putExtra("ingredients",mRecipeData.get(position).getString(Constant.KEY_RECIPE_INGREDIENTS));
                             intent.putExtra("details",mRecipeData.get(position).getString(Constant.KEY_DESCRIPTION_RECIPE));
+                            intent.putExtra("type",mRecipeData.get(position).getString(Constant.KEY_TYPE));
+                            intent.putExtra("place",mRecipeData.get(position).getString(Constant.KEY_PLACE));
                             startActivity(intent);
                         }
                     });
@@ -140,12 +160,7 @@ public class HomeActivity extends ActionBarActivity {
         // recipeQuery1.orderByDescending(Constant.KEY_CREATED_AT);
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home, menu);
-        return true;
-    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

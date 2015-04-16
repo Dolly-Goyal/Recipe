@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:id="@+id/linear">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
     <TextView
         android:id="@+id/personId"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/recipeTitle"
+        android:layout_width="match_parent"
         android:textStyle="bold"
         android:textColor="#ff000000"
         android:paddingLeft="20dp"/>
 
     <TextView
         android:id="@+id/recipeTitle"
-        android:layout_width="96dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:textColor="#ff848484"
-        android:paddingRight="20dp"/>
+        android:paddingLeft="20dp"
+        android:layout_below="@id/personId"/>
 
     </RelativeLayout>
-</LinearLayout>

@@ -2,8 +2,10 @@ package com.recipetresure;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +31,7 @@ public class UserDataActivity extends ActionBarActivity {
     List<ParseObject> po;
     List<String> rName;
     List<Date> date;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,12 @@ public class UserDataActivity extends ActionBarActivity {
         s = getIntent().getStringExtra("userName");
         UserRecipeList = (ListView) findViewById(R.id.particularUserData);
 
-
+        mToolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(mToolbar);
+        navigationFragment drawerFragment = (navigationFragment)
+                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_fragment);
+        drawerFragment.setUp(R.id.navigation_drawer_fragment,
+                (DrawerLayout)findViewById(R.id.drawer_layout), mToolbar);
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("RecipeInfo");
         query.whereEqualTo(Constant.KEY_RECIPE_OWNER_USER, s);

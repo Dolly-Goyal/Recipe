@@ -32,7 +32,7 @@ import java.util.Locale;
 
 
 public class RecipeForm extends ActionBarActivity {
-    EditText recipeName,recipeIngredients,recipeDescription;
+    EditText recipeName,recipeIngredients,recipeDescription,recipeType,recipeFamous;
     Button submitRecipe,logOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,8 @@ public class RecipeForm extends ActionBarActivity {
         recipeDescription = (EditText) findViewById(R.id.recipeDetails);
         submitRecipe = (Button) findViewById(R.id.submitRecipe);
         logOut = (Button) findViewById(R.id.logOut);
+        recipeType = (EditText) findViewById(R.id.recipeType);
+        recipeFamous = (EditText) findViewById(R.id.recipeFamous);
 
         //After submit recipe redirect on same page
         //Recipe data save in parse
@@ -56,6 +58,8 @@ public class RecipeForm extends ActionBarActivity {
                 recipeDetail.put("Recipe_Ingredients", recipeIngredients.getText().toString());
                 recipeDetail.put("Recipe_Details", recipeDescription.getText().toString());
                 recipeDetail.put("Recipe_Owner_user_name", ParseUser.getCurrentUser().getUsername());
+                recipeDetail.put("Type_recipe", ParseUser.getCurrentUser().getUsername());
+                recipeDetail.put("Place", ParseUser.getCurrentUser().getUsername());
 
                 recipeDetail.saveInBackground(new SaveCallback() {
                     @Override

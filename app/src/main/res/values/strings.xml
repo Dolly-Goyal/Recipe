@@ -25,5 +25,8 @@
     <string name="drawer_close">Close</string>
     <string name="title_activity_sort_by_user">SortByUserActivity</string>
     <string name="title_activity_user_data">UserDataActivity</string>
+    <string name="title_activity_sort_by_type">SortByType</string>
+    <string name="title_activity_sort_by_place">SortByPlace</string>
+    <string name="title_activity_type_data">TypeDataActivity</string>
 
 </resources>

@@ -1,10 +1,15 @@
-<RelativeLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.recipetresure.RecipeForm"
-    android:id="@+id/related">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.recipetresure.RecipeForm"
+        android:id="@+id/related">
 
     <include
         android:id="@+id/app_bar"
@@ -67,11 +72,43 @@
                 android:hint="Recipe Name"/>
 
             <EditText
+                android:id="@+id/recipeType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/recipeName"
+                android:hint="Recipe Type"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="(For example type of recipe is Juice, Sweet, Paratha, etc....)"
+                android:layout_below="@+id/recipeType"
+                android:id="@+id/example"
+                android:paddingLeft="20dp"/>
+
+            <EditText
+                android:id="@+id/recipeFamous"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/example"
+                android:hint="Famous"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="(For example recipe famous from Rajasthan, Karnataka, Panjabi, etc... )"
+                android:layout_below="@+id/recipeFamous"
+                android:id="@+id/example1"
+                android:paddingLeft="20dp"/>
+
+            <EditText
                 android:id="@+id/recipeIngredients"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/recipeName"
-                android:layout_marginTop="25dp"
+                android:layout_below="@+id/example1"
+                android:layout_marginTop="15dp"
                 android:ems="10"
                 android:hint="Recipe Ingredients"
                 android:inputType="textMultiLine"/>
@@ -86,10 +123,16 @@
                 android:hint="Describe Recipe"
                 android:inputType="textMultiLine"/>
 
-        </RelativeLayout>
-    </ScrollView>
-
-
-
+                </RelativeLayout>
+            </ScrollView>
+         </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
+    <fragment
+        android:layout_width="match_parent"
+        android:name="com.recipetresure.navigationFragment"
+        android:layout_height="match_parent"
+        android:id="@+id/navigation_drawer_fragment"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation"
+        tools:layout="@layout/fragment_navigation"></fragment>
+</android.support.v4.widget.DrawerLayout>

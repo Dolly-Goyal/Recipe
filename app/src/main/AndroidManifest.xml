@@ -33,9 +33,11 @@
         <activity
             android:name=".RecipeForm"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustNothing">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeActivity">
-                </meta-data>
+            android:windowSoftInputMode="adjustNothing" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" >
+            </meta-data>
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -44,20 +46,38 @@
         <activity
             android:name=".DetailActivity"
             android:label="@string/title_activity_detail" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeActivity">
-                </meta-data>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" >
+            </meta-data>
         </activity>
         <activity
             android:name=".SortByUserActivity"
             android:label="@string/title_activity_sort_by_user" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeActivity">
-                </meta-data>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" >
+            </meta-data>
         </activity>
         <activity
             android:name=".UserDataActivity"
             android:label="@string/title_activity_user_data" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeActivity">
-                </meta-data>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" >
+            </meta-data>
+        </activity>
+        <activity
+            android:name=".SortByType"
+            android:label="@string/title_activity_sort_by_type" >
+        </activity>
+        <activity
+            android:name=".SortByPlace"
+            android:label="@string/title_activity_sort_by_place" >
+        </activity>
+        <activity
+            android:name=".TypeDataActivity"
+            android:label="@string/title_activity_type_data" >
         </activity>
     </application>
 

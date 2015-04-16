@@ -1,12 +1,10 @@
 package com.recipetresure;
 
 import android.content.Intent;
-import android.support.v4.app.NavUtils;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,16 +22,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SortByUserActivity extends ActionBarActivity {
-    private ListView userNameList;
-    protected List<ParseUser> mRecipeData;
-    List<String> un1,rn;
+public class SortByType extends ActionBarActivity {
+    private ListView recipeTypeList;
+    protected List<ParseObject> mRecipeData;
+    List<String> tr;
     private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sort_by_user);
+        setContentView(R.layout.activity_sort_by_type);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -41,12 +39,8 @@ public class SortByUserActivity extends ActionBarActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        userNameList = (ListView) findViewById(R.id.userNameData);
-        un1 = new ArrayList<String>();
-
-        setSupportProgressBarIndeterminate(true);
-        ParseQuery<ParseUser> query = ParseUser.getQuery();
-        query.orderByDescending("username");
+        recipeTypeList = (ListView) findViewById(R.id.typerecipelist);
+        tr = new ArrayList<String>();
 
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
@@ -55,28 +49,37 @@ public class SortByUserActivity extends ActionBarActivity {
         drawerFragment.setUp(R.id.navigation_drawer_fragment,
                 (DrawerLayout)findViewById(R.id.drawer_layout), mToolbar);
 
-        query.findInBackground(new FindCallback<ParseUser>() {
+        setSupportProgressBarIndeterminate(true);
+        ParseQuery<ParseObject> recipeQuery1 = ParseQuery.getQuery("RecipeInfo");
+        recipeQuery1.findInBackground(new FindCallback<ParseObject>() {
             @Override
-            public void done(List<ParseUser> parseUsers, ParseException e) {
-                mRecipeData = parseUsers;
-                for(ParseUser u :mRecipeData) {
-                    un1.add(u.getUsername());
+            public void done(List<ParseObject> parseObjects, ParseException e) {
+                mRecipeData = parseObjects;
+                int i = 0;
+                for (ParseObject t: mRecipeData) {
+                    tr.add(t.getString(Constant.KEY_TYPE));
+                    i++;
                 }
-                ArrayAdapter adapter = new ArrayAdapter(SortByUserActivity.this,android.R.layout.simple_list_item_1,un1);
-                userNameList.setAdapter(adapter);
-
+                ArrayAdapter adapter = new ArrayAdapter(SortByType.this,android.R.layout.simple_list_item_1,tr);
+                recipeTypeList.setAdapter(adapter);
             }
         });
-        userNameList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        recipeTypeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(SortByUserActivity.this, UserDataActivity.class);
-                mRecipeData.get(position).getUsername();
-                intent.putExtra("userName", mRecipeData.get(position).getUsername());
-                //System.out.println(" UserName " + mRecipeData.get(position).getUsername());
+                Intent intent = new Intent(SortByType.this, TypeDataActivity.class);
+                intent.putExtra("Type",mRecipeData.get(position).getString(Constant.KEY_TYPE));
                 startActivity(intent);
             }
         });
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_sort_by_type, menu);
+        return true;
     }
 
     @Override
@@ -89,9 +92,6 @@ public class SortByUserActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }
-        if (id == R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
         }
 
         return super.onOptionsItemSelected(item);

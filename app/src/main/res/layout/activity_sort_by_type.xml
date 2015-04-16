@@ -5,34 +5,33 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="com.recipetresure.SortByUserActivity"
-                android:background="#FFCCBC">
+                tools:context="com.recipetresure.SortByType">
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar">
+        </include>
 
-    <include
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar">
-    </include>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type of Recipe"
+            android:id="@+id/typeRecipe"
+            android:textSize="35dp"
+            android:gravity="left"
+            android:textColor="#D50000"
+            android:layout_below="@+id/app_bar"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="User's Name List"
-        android:id="@+id/nameUserList"
-        android:textSize="35dp"
-        android:gravity="left"
-        android:textColor="#D50000"
-        android:layout_below="@+id/app_bar"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/typerecipelist"
+            android:layout_below="@+id/typeRecipe"/>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/userNameData"
-        android:layout_below="@+id/nameUserList"/>
-
-    </RelativeLayout>
+</RelativeLayout>
     <fragment
         android:layout_width="match_parent"
         android:name="com.recipetresure.navigationFragment"

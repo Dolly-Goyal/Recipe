@@ -1,6 +1,5 @@
 package com.recipetresure;
 
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,12 +19,12 @@ import java.text.SimpleDateFormat;
  * A simple {@link Fragment} subclass.
  */
 public class navigationFragment extends android.support.v4.app.Fragment {
+
     public static final String PREF_FILE_NAME = "testpref";
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     public static final String KEY_USER_LEARNED_DRAWER = "user_learned_drawer";
     private View containerView;
-
     private boolean mUserLearnedDrawer;
     private boolean mFromSavedInstanceState;
     public navigationFragment() {
@@ -35,12 +34,12 @@ public class navigationFragment extends android.support.v4.app.Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         mUserLearnedDrawer = Boolean.valueOf(readFromPreferences(getActivity(),KEY_USER_LEARNED_DRAWER,"false"));
         if(savedInstanceState != null){
             mFromSavedInstanceState = true;
         }
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +47,6 @@ public class navigationFragment extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_navigation, container, false);
     }
-
 
     public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {
         containerView = getActivity().findViewById(fragmentId);
@@ -70,7 +68,6 @@ public class navigationFragment extends android.support.v4.app.Fragment {
                 getActivity().invalidateOptionsMenu();
             }
             //for change the toolbar as a dark when side navigation is open
-
         };
         if (mUserLearnedDrawer && mFromSavedInstanceState) {
             mDrawerLayout.openDrawer(containerView);

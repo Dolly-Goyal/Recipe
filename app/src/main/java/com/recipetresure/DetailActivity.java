@@ -2,6 +2,7 @@ package com.recipetresure;
 
 import android.content.Intent;
 import android.support.v4.app.NavUtils;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,8 @@ public class DetailActivity extends ActionBarActivity {
     TextView mPersonId, mRecipetitle;
     TextView mIngredients, mDescription;
     RatingBar mRatingBar;
+    private Toolbar mToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,13 @@ public class DetailActivity extends ActionBarActivity {
         String mRecipeIngredients = getIntent().getStringExtra("ingredients");
         String mRecipeDetails = getIntent().getStringExtra("details");
 
+        mToolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(mToolbar);
+        navigationFragment drawerFragment = (navigationFragment)
+                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_fragment);
+        drawerFragment.setUp(R.id.navigation_drawer_fragment,
+                (DrawerLayout)findViewById(R.id.drawer_layout), mToolbar);
+
         mPersonId.setText(mRecipeUserId);
         mRecipetitle.setText(mRecipeTitle);
         mIngredients.setText(mRecipeIngredients);
@@ -52,12 +62,6 @@ public class DetailActivity extends ActionBarActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_detail, menu);
-        return true;
-    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

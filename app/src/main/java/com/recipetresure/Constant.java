@@ -12,4 +12,6 @@ public class Constant {
     public static final String KEY_RECIPE_INGREDIENTS = "Recipe_Ingredients";
     public static final String KEY_DESCRIPTION_RECIPE = "Recipe_Details";
     public static final String KEY_DATE = "createdAt";
+    public static final String KEY_TYPE = "Type_recipe";
+    public static final String KEY_PLACE = "Place";
 }
